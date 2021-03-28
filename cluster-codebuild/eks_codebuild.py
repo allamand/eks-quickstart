@@ -36,6 +36,7 @@ class EKSCodeBuildStack(core.Stack):
         git_hub_source = codebuild.Source.git_hub(
             owner="jasonumiker",
             repo="eks-quickstart",
+            branch_or_ref="production",
             webhook=True,
             webhook_filters=[
                 codebuild.FilterGroup.in_event_of(codebuild.EventAction.PUSH).and_branch_is("production").and_file_path_is("cluster-bootstrap/*")
