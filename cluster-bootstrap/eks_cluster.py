@@ -19,7 +19,7 @@ import os
 
 # Set this to True in order to deploy a Bastion host to access your new cluster/environment
 # The preferred option is to use a Client VPN instead so this defaults to False
-deploy_bastion = True
+deploy_bastion = False
 
 # Deploy Client VPN?
 deploy_client_vpn = True
