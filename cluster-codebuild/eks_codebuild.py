@@ -32,13 +32,13 @@ class EKSCodeBuildStack(core.Stack):
             ]
         )
 
-        # We only want to fire on the master branch and if there is a change in the dockerbuild folder
+        # We only want to fire on the production branch and if there is a change in the dockerbuild folder
         git_hub_source = codebuild.Source.git_hub(
             owner="jasonumiker",
             repo="eks-quickstart",
             webhook=True,
             webhook_filters=[
-                codebuild.FilterGroup.in_event_of(codebuild.EventAction.PUSH).and_branch_is("main").and_file_path_is("cluster-bootstrap/*")
+                codebuild.FilterGroup.in_event_of(codebuild.EventAction.PUSH).and_branch_is("production").and_file_path_is("cluster-bootstrap/*")
             ]
         )
 
