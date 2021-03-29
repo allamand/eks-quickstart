@@ -178,7 +178,7 @@
                 "Type": "EVENT"
               },
               {
-                "Pattern": "refs/heads/production",
+                "Pattern": "refs/heads/main",
                 "Type": "HEAD_REF"
               },
               {
@@ -197,7 +197,7 @@
     "CDKMetadata": {
       "Type": "AWS::CDK::Metadata",
       "Properties": {
-        "Analytics": "v2:deflate64:H4sIAAAAAAAAAy2MXQrDIBCEz5J3syGUQPtWyAUkPYFdLd3EuOAPJYh3b419mm/4mBnhNsHY3dUn9Ki3ISN7A/kRFW5iZheiTxjF/HKLCZw8mso/oSkSuyLqMJPaIS9sT3mmZEt41NqoCGRtnomshiw9r6a9/rGUIuQR3+yGC1xh6tZA1PvkIu0GlpZffBtahawAAAA="
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAAy2MXQrCMBCEz9L3dEtRQd+EXiDUE8RNxG3TLOQHKSF31zQ+zTd8zIxwO8PY3dUn9KjXISN7A/kRFa5iYheiTxjF9HKzCZw8mso/oSkSuyLqMJPaIM9sD3mkZEu419qoCGRtnomshiw9L6a9/rGUIuQe3+yGE1zh0i2BqPfJRdoMzC2/NHGBIKwAAAA="
       },
       "Metadata": {
         "aws:cdk:path": "EKSCodeBuildStack/CDKMetadata/Default"

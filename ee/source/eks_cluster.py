@@ -22,12 +22,12 @@ import os
 deploy_bastion = True
 
 # Deploy Client VPN?
-deploy_client_vpn = True
+deploy_client_vpn = False
 
 # If VPN = True then create and upload your client and server certs as per putting the ARNs below
 # https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/client-authentication.html#mutual
-client_certificate_arn="arn:aws:acm:ap-southeast-2:505070718513:certificate/6b85eefd-56b3-4461-8dda-19613170ba2d"
-server_certificate_arn="arn:aws:acm:ap-southeast-2:505070718513:certificate/9b30b41a-89a1-416b-b2d2-bc76c26e9f15"
+client_certificate_arn="arn:aws:acm:ap-southeast-2:123456789123:certificate/XXX"
+server_certificate_arn="arn:aws:acm:ap-southeast-2:123456789123:certificate/XXX"
 
 # CIDR Block for VPN Clients (has to be at least a /22)
 vpn_client_cidr_block="10.1.0.0/22"
@@ -52,7 +52,7 @@ existing_vpc_name="VPC"
 create_new_cluster_admin_role = False
 
 # If create_new_cluster_admin_role is False then provide the ARN of the existing role to use
-existing_role_arn="arn:aws:iam::505070718513:role/IsenAdminRole"
+"arn:aws:iam::" + core.Fn.ref("AWS::AccountId") + ":role/TeamRole"
 
 # Deploy the AWS Load Balancer Controller?
 deploy_aws_lb_controller = True
