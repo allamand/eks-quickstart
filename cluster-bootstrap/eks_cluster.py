@@ -109,6 +109,7 @@ class EKSClusterStack(core.Stack):
             }
             cluster_admin_role.add_to_policy(iam.PolicyStatement.from_json(cluster_admin_policy_statement_json_1))
         else:
+            # You'll also need to add a trust relationship to ec2.amazonaws.com to sts:AssumeRole to this as well
             cluster_admin_role = iam.Role.from_role_arn(self, "ClusterAdminRole",
                 role_arn=existing_role_arn
             )
@@ -1189,7 +1190,7 @@ class EKSClusterStack(core.Stack):
             # Create an Instance Profile for our Admin Role to assume w/EC2
             cluster_admin_role_instance_profile = iam.CfnInstanceProfile(
                 self, "ClusterAdminRoleInstanceProfile",
-                roles=[cluster_admin_role.role_name]        
+                roles=[cluster_admin_role.role_name] 
             )
             
             # Create code-server bastion
